@@ -29,74 +29,55 @@ body{
     align-items: center;
     background-color: $clr-dark-cyan ;
     height: 100vh;
-    width: 100%;
-    background-image: url(../images/bg-pattern-top.svg),
-    url(../images/bg-pattern-bottom.svg);
+    overflow: hidden;
     font-family: 'Kumbh Sans', sans-serif;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: -115vw -60vh, 50vw 50vh;
 
-
-    @media (min-width:1439px) {
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: -10vw -10vw, 50vw 60vh;
+    .background-top{
+        position: fixed;
+        right: 35%;
+        transform: translate(0%, -50%);
+    }
+    .background-bottom{
+        position: fixed;
+        left: 55%;
+        transform: translate(0, 40%);
+    }
+    @media (min-width:1024px) {
+        .background-top{
+            position: fixed;
+            right: 50%;
+            transform: translate(0%, -40%);
+        }
+        .background-bottom{
+            position: fixed;
+            left: 50%;
+            transform: translate(0, 50%);
+        } 
         .attribution{
-            font-size: 1.2rem;
+            font-size: 1.5rem;
         }
     }
-
-    @media (min-width:700px) and (orientation:portrait){
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: -45vw -35vw, 45vw 55vh;
+    @media (min-width:600px){
         .attribution{
-            font-size: 1.2rem;
+            font-size: 1.3rem;
         }
     }
-    @media (min-width:599px){
-        .attribution{
-            font-size: 1rem;
-        }
-    }
-
     @media (min-width:800px){
         .attribution{
-            font-size: 1rem;
-            margin:0;
-        }
-    }
-    @media (min-width:1023px) and (orientation:landscape){
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: -25vw -45vh, 50vw 50vh;
-        .attribution{
             font-size: 1.5rem;
         }
     }
-    @media (min-width:719) {
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: 0vw -20vw, 60vw 65vh;
-        .attribution{
-            font-size: 1.5rem;
-        }
-    }
-    @media (min-width:1023px) and (orientation:portrait){
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: -45vw -20vh, 45vw 50vh;
-        .attribution{
-            font-size: 1.7rem;
-        }
-    }
+
 }
 
 .wrapper{
     position: relative;
     flex-basis:calc(667px * 0.57) ;
+    justify-content: center;
+    align-items: center;
     width: calc(375px * 0.9);
+    min-width: calc(375px * 0.9);
+    min-height:calc(667px * 0.57) ;;
     background-color: white;
     border-radius: 1rem;
     margin: 50px;
@@ -166,7 +147,7 @@ body{
     display:block;
     text-align: center;
     flex-basis: 90%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     margin-bottom: 5px;
     font-size: 11px;
